@@ -1,0 +1,18 @@
+.animation-fade {
+  animation: fade 2s linear forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  70% {
+    opacity: 0;
+    scale: 0.7;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

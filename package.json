@@ -1,0 +1,43 @@
+{
+  "name": "collabbi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "dev": "next dev",
+    "start": "next start -p $PORT",
+    "build": "next build",
+    "export": "next export",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {
+    "npm": "6.x",
+    "node": "14.x"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^0.21.4",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-flags-select": "^2.1.2",
+    "react-icons": "^4.3.1",
+    "react-phone-input-2": "^2.14.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^11.1.2",
+    "autoprefixer": "^10.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.6",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.15"
+  }
+}
