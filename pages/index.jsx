@@ -11,14 +11,14 @@ const ReferralPage = () => (
       }}
     />
     <div className="basis-3/5 flex-1 self-center px-4 py-6 overflow-y-auto md:px-20">
-      <div className="flex flex-col items-center max-w-xl m-4 sm:ml-[70px]">
+      <div className="flex flex-col items-center max-w-xl m-4">
         <div>
           <div className="space-y-8 justify-start font-inter">
-            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden md:w-[500px]">
+            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden">
               Hey, MetaDev is an exclusive invitation only web3 professional
               networking platform built for Developers.
             </div>
-            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden  md:w-[500px]">
+            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden">
               We&apos;re still opening up but anyone can join with an invite
               from an existing user! To join, an existing user has to send an
               invite and also give you access to join MetaDev. Sign up to see if
