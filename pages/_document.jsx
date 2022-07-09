@@ -35,6 +35,7 @@ class NextDocument extends Document {
             content="/favicons/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
+          <title>Collabi</title>
         </Head>
         <body className="w-full">
           <Main />

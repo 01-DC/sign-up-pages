@@ -42,7 +42,7 @@ const MainNavigation = () => {
             <button
               type="button"
               // onClick={() => setSignup(true)}
-              onClick={() => router.replace('/signup')}
+              onClick={() => router.replace('/referral')}
               className="font-semibold text-base flex px-6 py-2 h-[2.375rem] justify-center items-center rounded-4xl bg-[#0dbd8b] text-white"
             >
               Sign Up
