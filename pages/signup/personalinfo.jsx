@@ -58,14 +58,14 @@ const PersonalInfo = () => {
   return (
     <div className="flex w-screen h-screen overflow-y-hidden bg-white">
       <div
-        className="basis-2/5 flex-1 flex flex-col justify-center !bg-bottom !bg-contain !bg-no-repeat"
+        className="w-1/3 flex flex-col justify-center !bg-bottom !bg-contain !bg-no-repeat"
         style={{
           background: '#eff2f6',
 
           backgroundImage: 'url(/images/modal-bottom.b7365c4c.png)',
         }}
       >
-        <div className="px-10 pt-10">
+        <div className="px-10">
           <h6
             className="my-6 text-2xl font-semibold"
             style={{ lineHeight: '1.875rem' }}
@@ -80,7 +80,7 @@ const PersonalInfo = () => {
           </p>
         </div>
       </div>
-      <div className="basis-3/5 flex-1 self-center px-4 py-6 overflow-y-auto md:px-20">
+      <div className="w-2/3 self-center px-4 py-6 overflow-y-auto md:px-20">
         {/*  */}
         <div className="">
           <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>

@@ -4,13 +4,13 @@ import ReferralButton from '../components/ReferralButton';
 const ReferralPage = () => (
   <div className="flex w-screen h-screen overflow-y-hidden bg-white">
     <div
-      className="basis-2/5 flex-1 justify-center !bg-bottom !bg-contain !bg-no-repeat"
+      className="w-1/3 justify-center !bg-bottom !bg-contain !bg-no-repeat"
       style={{
         background: '#eff2f6',
         backgroundImage: 'url(/images/modal-bottom.b7365c4c.png)',
       }}
     />
-    <div className="basis-3/5 flex-1 self-center md:px-20 h-[60vh] overflow-y-auto">
+    <div className="w-2/3 self-center md:px-20 h-[60vh] overflow-y-auto">
       <div className="flex flex-col items-center max-w-xl m-4">
         <div>
           <div className="space-y-8 justify-start font-inter">
