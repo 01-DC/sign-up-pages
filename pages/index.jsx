@@ -10,7 +10,7 @@ const ReferralPage = () => (
         backgroundImage: 'url(/images/modal-bottom.b7365c4c.png)',
       }}
     />
-    <div className="basis-3/5 flex-1 self-center px-4 py-6 overflow-y-auto md:px-20">
+    <div className="basis-3/5 flex-1 self-center md:px-20 h-[60vh] overflow-y-auto">
       <div className="flex flex-col items-center max-w-xl m-4">
         <div>
           <div className="space-y-8 justify-start font-inter">

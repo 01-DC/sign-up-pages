@@ -61,11 +61,11 @@ const SignUp = () => {
           </p>
         </div>
       </div>
-      <div className="basis-3/5 flex-1 self-center px-4 py-6 overflow-y-auto md:px-20">
+      <div className="basis-3/5 flex-1 self-center overflow-y-auto md:px-20">
         {/*  */}
-        <div className="">
-          <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
-            <div className={classNames('mt-10 items-center hidden')}>
+        <div className="h-[60vh] overflow-y-auto">
+          <div className="w-full max-w-xl" style={{ color: '#141820' }}>
+            <div className={classNames('items-center hidden')}>
               <button type="button">
                 <img
                   src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
@@ -127,7 +127,7 @@ const SignUp = () => {
               </button>
             </div>
 
-            <form className={classNames('block  w-full')}>
+            <form className={classNames('block w-full')}>
               <button
                 type="button"
                 className={classNames(
@@ -256,7 +256,7 @@ const SignUp = () => {
                 </span>
               </p>
               <p
-                className="mt-5 mb-4 text-center"
+                className="mt-5 text-center"
                 style={{ fontSize: '15px', color: '#788699' }}
               >
                 Already have an account?{' '}
