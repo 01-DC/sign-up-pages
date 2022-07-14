@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import Error from '../../components/common/InputError';
 import classNames from '../../utils/constants/classNames';
 import Input from './Input';
@@ -126,7 +127,7 @@ const Experience = () => {
             <div
               className={classNames('mt-10 flex items-center justify-between')}
             >
-              <button type="button">
+              <button type="button" onClick={() => router.back()}>
                 <img
                   src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
                   height={30}
@@ -178,15 +179,16 @@ const Experience = () => {
                   )}
                 />
               </div>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                )}
-                onClick={() => router.replace('/signup/Skills')}
-              >
-                Next
-              </button>
+              <Link href="/signup/Skills">
+                <button
+                  type="button"
+                  className={classNames(
+                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
+                  )}
+                >
+                  Next
+                </button>
+              </Link>
               <button
                 type="button"
                 className={classNames(
@@ -199,7 +201,7 @@ const Experience = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-xl mt-14">
+        <div className="w-full max-w-xl pt-12 h-[60vh] overflow-y-auto">
           <div className="">
             <p className="mb-2 font-semibold text-md">
               What areas have you had the most experience with?

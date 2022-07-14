@@ -1,7 +1,4 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import Link from 'next/dist/client/link';
 import Error from '../../components/common/InputError';
 import classNames from '../../utils/constants/classNames';
 import Input from './Input';
@@ -9,12 +6,13 @@ import InputMessage from '../../components/common/InputMessage';
 
 import { useGlobalHomeContext } from '../../HomeContext';
 
-const Interests = ({ error }) => {
+const Interests = () => {
   const { email } = useGlobalHomeContext();
 
   const [otpData, setOtpData] = useState([]);
   const [otpLoad, setOtpLoad] = useState('');
   const [otpError, setOtpError] = useState('');
+
   useEffect(() => {
     if (otpData.length >= 6) {
       handleSetErrors('otpLoad', 'Validating OTP');
@@ -210,8 +208,8 @@ const Interests = ({ error }) => {
           </div>
         </div>
 
-        <div className="w-full">
-          <div className="max-w-xl mt-10">
+        <div className="w-full h-[60vh] overflow-y-auto pt-12">
+          <div className="max-w-xl">
             <div
               className={classNames(
                 'flex flex-col items-center justify-center'

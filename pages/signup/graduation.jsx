@@ -94,7 +94,7 @@ const Graduation = () => {
                   'mt-10 flex items-center justify-between'
                 )}
               >
-                <button type="button">
+                <button type="button" onClick={() => router.back()}>
                   <img
                     src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
                     height={30}
@@ -146,15 +146,16 @@ const Graduation = () => {
                     )}
                   />
                 </div>
-                <button
-                  type="button"
-                  className={classNames(
-                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                  )}
-                  onClick={() => router.replace('/signup/personalinfo')}
-                >
-                  Next
-                </button>
+                <Link href="/signup/personalinfo">
+                  <button
+                    type="button"
+                    className={classNames(
+                      'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
+                    )}
+                  >
+                    Next
+                  </button>
+                </Link>
                 <button
                   type="button"
                   className={classNames(
@@ -168,7 +169,7 @@ const Graduation = () => {
           </div>
 
           {/*  */}
-          <div className="w-full">
+          <div className="w-full h-[60vh] overflow-y-auto">
             <div className={classNames('mt-8 w-full max-w-xl')}>
               <div className="relative flex flex-col gap-2 ">
                 <Input

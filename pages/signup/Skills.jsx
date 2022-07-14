@@ -122,7 +122,7 @@ const Skills = () => {
       skills
     );
 
-    router.replace('/signup/verifyEmail');
+    router.push('/signup/verifyEmail');
   };
 
   return (
@@ -157,7 +157,7 @@ const Skills = () => {
             <div
               className={classNames('mt-10 flex items-center justify-between')}
             >
-              <button type="button">
+              <button type="button" onClick={() => router.back()}>
                 <img
                   src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
                   height={30}
@@ -230,7 +230,7 @@ const Skills = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-xl mt-14">
+        <div className="w-full max-w-xl pt-12 h-[60vh] overflow-y-auto">
           <div className="">
             <p className="mb-2 font-semibold text-md">
               Rank your skills from the list below.

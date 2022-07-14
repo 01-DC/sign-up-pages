@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import ReactFlagsSelect from 'react-flags-select';
 
 import timezones from '../../utils/constants/zones';
@@ -122,7 +123,7 @@ const Location = () => {
                   'mt-10 flex items-center justify-between'
                 )}
               >
-                <button type="button">
+                <button type="button" onClick={() => router.back()}>
                   <img
                     src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
                     height={30}
@@ -174,22 +175,23 @@ const Location = () => {
                     )}
                   />
                 </div>
-                <button
-                  type="button"
-                  className={classNames(
-                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                  )}
-                  // disabled={!validated}
-                  onClick={() => router.replace('/signup/graduation')}
-                >
-                  Next
-                </button>
+                <Link href="/signup/graduation">
+                  <button
+                    type="button"
+                    className={classNames(
+                      'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
+                    )}
+                    // disabled={!validated}
+                  >
+                    Next
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
 
           {/*  */}
-          <div className="">
+          <div className="h-[60vh] overflow-y-auto">
             <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
               <div className="flex items-center">
                 <p className="w-full leading-6">

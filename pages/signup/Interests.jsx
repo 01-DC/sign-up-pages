@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import Error from '../../components/common/InputError';
 import classNames from '../../utils/constants/classNames';
 import Input from './Input';
@@ -147,13 +148,13 @@ const Interests = ({ error }) => {
         </div>
       </div>
 
-      <div className="basis-3/5 flex-1 self-center px-4 py-6 overflow-y-auto md:px-20">
+      <div className="basis-3/5 flex-1 self-center px-4 py-6 md:px-20">
         <div className="">
           <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
             <div
               className={classNames('mt-10 flex items-center justify-between')}
             >
-              <button type="button">
+              <button type="button" onClick={() => router.back()}>
                 <img
                   src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
                   height={30}
@@ -205,15 +206,16 @@ const Interests = ({ error }) => {
                   )}
                 />
               </div>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                )}
-                onClick={() => router.replace('/signup/Experience')}
-              >
-                Next
-              </button>
+              <Link href="/signup/Experience">
+                <button
+                  type="button"
+                  className={classNames(
+                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
+                  )}
+                >
+                  Next
+                </button>
+              </Link>
               <button
                 type="button"
                 className={classNames(
@@ -226,7 +228,7 @@ const Interests = ({ error }) => {
           </div>
         </div>
 
-        <div className="w-full max-w-xl mt-14">
+        <div className="w-full max-w-xl h-[60vh] overflow-y-auto pt-12">
           <div className="">
             <p className="mb-2 font-semibold text-md">
               Which of these roles are you most interested in?

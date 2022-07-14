@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
 
 import { FaCheck } from 'react-icons/fa';
 import InputMessage from '../../components/common/InputMessage';
@@ -13,10 +12,9 @@ import 'react-phone-input-2/lib/style.css';
 
 import { useGlobalHomeContext } from '../../HomeContext';
 
-const SignUp = ({ handleClose }) => {
+const SignUp = () => {
   const { name, setName, email, setEmail, password, setPassword } =
     useGlobalHomeContext();
-  const router = useRouter();
 
   const [passwordToggle, setPasswordToggle] = useState(false);
 
@@ -233,16 +231,17 @@ const SignUp = ({ handleClose }) => {
 
               {/* *********Graduation************* */}
 
-              <button
-                type="button"
-                onClick={() => router.replace('/signup/Location')}
-                className={classNames(
-                  'bg-signup-blue disabled:cursor-not-allowed disabled:bg-opacity-50 mt-6 w-36 text-sm mx-auto mb-12 block text-white px-3 py-2.5 rounded-md transition-all duration-200 ease-in font-bold'
-                )}
-                style={{ lineHeight: '1.375rem' }}
-              >
-                Next
-              </button>
+              <Link href="/signup/Location">
+                <button
+                  type="button"
+                  className={classNames(
+                    'bg-signup-blue disabled:cursor-not-allowed disabled:bg-opacity-50 mt-6 w-36 text-sm mx-auto mb-12 block text-white px-3 py-2.5 rounded-md transition-all duration-200 ease-in font-bold'
+                  )}
+                  style={{ lineHeight: '1.375rem' }}
+                >
+                  Next
+                </button>
+              </Link>
             </form>
 
             <div style={{ margin: '0 10%' }}>
