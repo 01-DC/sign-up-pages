@@ -148,137 +148,72 @@ const Interests = ({ error }) => {
         </div>
       </div>
 
-      <div className="w-2/3 self-center px-4 py-6 md:px-20">
-        <div className="">
-          <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
-            <div
-              className={classNames('mt-10 flex items-center justify-between')}
-            >
-              <button type="button" onClick={() => router.back()}>
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
-                  height={30}
-                  width={30}
-                  alt="back"
-                  className="cursor-pointer"
-                />
-              </button>
+      <div className="w-2/3 overflow-y-auto md:px-20 flex flex-col pt-4">
+        <div className="my-auto w-full overflow-y-auto">
+          <div className="w-full max-w-xl h-full overflow-y-auto">
+            <div className="">
+              <p className="mb-2 font-semibold text-md">
+                Which of these roles are you most interested in?
+              </p>
 
-              <div className="flex">
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
+              <div className="relative">
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 my-2 text-sm text-gray-600 border border-gray-300 rounded-md outline-none"
+                  placeholder="Example: Sales, Marketing..."
+                  value={inputValue}
+                  onChange={handleInputValueChange}
                 />
+                {errors.rolesError && <Error error={errors.rolesError} />}
                 <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
+                  className={`${
+                    autocomplete.disabled ? 'hidden' : ''
+                  } max-h-64 overflow-y-scroll absolute z-10 border rounded-md border-gray-300 py-1 bg-white ml-1`}
+                  style={{ width: 'calc(100% + 20px)' }}
+                >
+                  {autocomplete.data.map((item, index) => (
+                    <button
+                      type="button"
+                      key={index}
+                      className="flex items-center w-full h-8 px-3 text-sm font-medium text-left cursor-pointer hover:bg-gray-100"
+                      onClick={() => updateItems(item)}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-1">
+                  {dataSet.map((item) => {
+                    const i = roles.findIndex((x) => x === item.name);
+                    return (
+                      <button
+                        type="button"
+                        key={item.name}
+                        className="inline-block px-4 py-3 mb-3 mr-2 text-sm text-gray-500 border border-gray-300 rounded-full cursor-pointer select-none"
+                        style={{
+                          background: i >= 0 ? '#61a0ff' : '',
+                          color: i >= 0 ? '#fff' : '',
+                        }}
+                        onClick={() => updateItems(item.name)}
+                      >
+                        {item.name}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+            </div>
+            <div className="flex justify-center">
               <Link href="/signup/Experience">
                 <button
                   type="button"
                   className={classNames(
-                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
+                    'p-3 mt-3 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed w-40'
                   )}
                 >
                   Next
                 </button>
               </Link>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-signup-blue text-white rounded-md text-sm font-medium hidden'
-                )}
-              >
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full max-w-xl h-[60vh] overflow-y-auto pt-12">
-          <div className="">
-            <p className="mb-2 font-semibold text-md">
-              Which of these roles are you most interested in?
-            </p>
-
-            <div className="relative">
-              <input
-                type="text"
-                className="w-full px-4 py-2 my-2 text-sm text-gray-600 border border-gray-300 rounded-md outline-none"
-                placeholder="Example: Sales, Marketing..."
-                value={inputValue}
-                onChange={handleInputValueChange}
-              />
-              {errors.rolesError && <Error error={errors.rolesError} />}
-              <div
-                className={`${
-                  autocomplete.disabled ? 'hidden' : ''
-                } max-h-64 overflow-y-scroll absolute z-10 border rounded-md border-gray-300 py-1 bg-white ml-1`}
-                style={{ width: 'calc(100% + 20px)' }}
-              >
-                {autocomplete.data.map((item, index) => (
-                  <button
-                    type="button"
-                    key={index}
-                    className="flex items-center w-full h-8 px-3 text-sm font-medium text-left cursor-pointer hover:bg-gray-100"
-                    onClick={() => updateItems(item)}
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-              <div className="mt-1">
-                {dataSet.map((item) => {
-                  const i = roles.findIndex((x) => x === item.name);
-                  return (
-                    <button
-                      type="button"
-                      key={item.name}
-                      className="inline-block px-4 py-3 mb-3 mr-2 text-sm text-gray-500 border border-gray-300 rounded-full cursor-pointer select-none"
-                      style={{
-                        background: i >= 0 ? '#61a0ff' : '',
-                        color: i >= 0 ? '#fff' : '',
-                      }}
-                      onClick={() => updateItems(item.name)}
-                    >
-                      {item.name}
-                    </button>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>

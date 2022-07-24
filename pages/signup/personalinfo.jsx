@@ -80,171 +80,108 @@ const PersonalInfo = () => {
           </p>
         </div>
       </div>
-      <div className="w-2/3 self-center px-4 py-6 overflow-y-auto md:px-20">
+      <div className="w-2/3 overflow-y-auto md:px-20 flex flex-col">
         {/*  */}
-        <div className="">
+        <div className="my-auto w-full overflow-y-auto">
           <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
-            <div
-              className={classNames('mt-10 flex items-center justify-between')}
-            >
-              <button type="button" onClick={() => router.back()}>
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
-                  height={30}
-                  width={30}
-                  alt="back"
-                  className="cursor-pointer"
-                />
-              </button>
+            {/*  */}
+            <div className="w-full h-full overflow-y-auto">
+              <div className={classNames('mt-8 w-full max-w-xl')}>
+                <div className="relative flex flex-col gap-2 ">
+                  <Input
+                    label="User Name"
+                    name="username"
+                    handleChange={handleUsernameChange}
+                    value={username}
+                    placeholder="Enter Username"
+                    type="text"
+                  />
 
-              <div className="flex">
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
+                  {true && (
+                    <div className="rounded-full bg-[#DEEBFF]/70 text-green-500 p-1 absolute right-2 top-[55%] text-xs">
+                      <FaCheck />
+                    </div>
                   )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-              </div>
-              <Link href="/signup/Interests">
-                <button
-                  type="button"
-                  className={classNames(
-                    'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                  )}
-                >
-                  Next
-                </button>
-              </Link>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-signup-blue text-white rounded-md text-sm font-medium hidden'
-                )}
-              >
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/*  */}
-        <div className="w-full h-[60vh] overflow-y-auto">
-          <div className={classNames('mt-8 w-full max-w-xl')}>
-            <div className="relative flex flex-col gap-2 ">
-              <Input
-                label="User Name"
-                name="username"
-                handleChange={handleUsernameChange}
-                value={username}
-                placeholder="Enter Username"
-                type="text"
-              />
-
-              {true && (
-                <div className="rounded-full bg-[#DEEBFF]/70 text-green-500 p-1 absolute right-2 top-[55%] text-xs">
-                  <FaCheck />
                 </div>
-              )}
-            </div>
 
-            <div className="relative flex flex-col gap-2 ">
-              <Input
-                label="Alternate Email"
-                name="alternateEmail"
-                handleChange={handleAlternateEmailChange}
-                value={alternateEmail}
-                placeholder="Enter Alternate Email"
-                type="text"
-              />
+                <div className="relative flex flex-col gap-2 ">
+                  <Input
+                    label="Alternate Email"
+                    name="alternateEmail"
+                    handleChange={handleAlternateEmailChange}
+                    value={alternateEmail}
+                    placeholder="Enter Alternate Email"
+                    type="text"
+                  />
 
-              {true && (
-                <div className="rounded-full bg-[#DEEBFF]/70 text-green-500 p-1 absolute right-2 top-[55%] text-xs">
-                  <FaCheck />
+                  {true && (
+                    <div className="rounded-full bg-[#DEEBFF]/70 text-green-500 p-1 absolute right-2 top-[55%] text-xs">
+                      <FaCheck />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
 
-            <div className="flex">
-              <div className="flex-1">
-                <label
-                  className="my-2.5 w-6/12 font-semibold leading-relaxed block text-sm"
-                  style={{
-                    color: '#201e27',
-                  }}
-                >
-                  Mobile Number
-                </label>
-                <PhoneInput
-                  country="in"
-                  value={mobileNo}
-                  onChange={(num) => handleMobileNoChange(num)}
-                  countryCodeEditable={false}
-                  placeholder="99999 99999"
-                  inputStyle={{ width: '100%' }}
-                />
+                <div className="flex">
+                  <div className="flex-1">
+                    <label
+                      className="my-2.5 font-semibold leading-relaxed block text-sm"
+                      style={{
+                        color: '#201e27',
+                      }}
+                    >
+                      Mobile Number
+                    </label>
+                    <PhoneInput
+                      country="in"
+                      value={mobileNo}
+                      onChange={(num) => handleMobileNoChange(num)}
+                      countryCodeEditable={false}
+                      placeholder="99999 99999"
+                      inputStyle={{ width: '100%' }}
+                    />
+                  </div>
+                  <div className="flex-1 ml-10">
+                    <label
+                      className="my-2.5 font-semibold leading-relaxed block text-sm"
+                      style={{ color: '#201e27' }}
+                    >
+                      Alternate Mobile Number
+                    </label>
+                    <PhoneInput
+                      country="in"
+                      value={altMobileNo}
+                      onChange={(num) => handleAltMobileNoChange(num)}
+                      countryCodeEditable={false}
+                      placeholder="99999 99999"
+                      inputStyle={{ width: '100%' }}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col mt-5">
+                  <label className="mb-2 text-sm font-semibold" htmlFor="about">
+                    About Me
+                  </label>
+                  <textarea
+                    rows={10}
+                    className="px-4 py-2 text-sm text-gray-600 transition duration-200 ease-out border rounded-md outline-none resize-none focus:border-blue-700"
+                    name="about"
+                    value={about}
+                    onChange={handleAboutChange}
+                  />
+                </div>
+                <div className="flex justify-center">
+                  <Link href="/signup/Interests">
+                    <button
+                      type="button"
+                      className={classNames(
+                        'p-3 mt-3 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed w-40'
+                      )}
+                    >
+                      Next
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <div className="flex-1 ml-10">
-                <label
-                  className="my-2.5 w-full  font-semibold leading-relaxed block text-sm"
-                  style={{ color: '#201e27' }}
-                >
-                  Alternate Mobile Number
-                </label>
-                <PhoneInput
-                  country="in"
-                  value={altMobileNo}
-                  onChange={(num) => handleAltMobileNoChange(num)}
-                  countryCodeEditable={false}
-                  placeholder="99999 99999"
-                  inputStyle={{ width: '100%' }}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col mt-5">
-              <label className="mb-2 text-sm font-semibold" htmlFor="about">
-                About Me
-              </label>
-              <textarea
-                rows={10}
-                className="px-4 py-2 text-sm text-gray-600 transition duration-200 ease-out border rounded-md outline-none resize-none focus:border-blue-700"
-                name="about"
-                value={about}
-                onChange={handleAboutChange}
-              />
             </div>
           </div>
         </div>

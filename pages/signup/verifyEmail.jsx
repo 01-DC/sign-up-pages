@@ -156,112 +156,65 @@ const Interests = () => {
         </div>
       </div>
 
-      <div className="w-2/3 self-center px-4 py-6 overflow-y-auto md:px-20">
-        <div className="">
+      <div className="w-2/3 overflow-y-auto md:px-20 flex flex-col">
+        <div className="my-auto overflow-y-auto">
           <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
-            <div
-              className={classNames('mt-10 flex items-center justify-center')}
-            >
-              <div className="flex">
+            <div className="w-full h-full overflow-y-auto pt-12">
+              <div className="max-w-xl">
                 <div
                   className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
+                    'flex flex-col items-center justify-center'
                   )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
+                >
+                  <h5 className="text-xl font-bold text-center">
+                    We Need to Verify your Email
+                  </h5>
+                  <p className="mt-4 text-base text-center">
+                    We sent an OTP to the Email address you provided when you
+                    created your account. Verify your email to continue
+                  </p>
+                  <div className="w-full">
+                    <Input type="text" label="Email" />
+
+                    <Input
+                      handleChange={(e) => setOtpData(e.target.value)}
+                      label="OTP"
+                      name="otpData"
+                      id="otp"
+                      placeholder="Enter OTP"
+                      type="number"
+                    />
+
+                    {/* <InputMessage
+                      message={otpLoad}
+                      loading={otpLoad === 'Validating OTP'}
+                    /> */}
+
+                    {otpError && <InputError error={otpError} />}
+                  </div>
+                  <hr
+                    className="w-full my-4"
+                    style={{ backgroundColor: '#dfe3eb' }}
+                  />
+                  <p className="mt-4 text-base text-center ">
+                    Click on the link in the email to verify your account. You
+                    may need to check your <strong>spam</strong> folder.
+                  </p>
+                  <button
+                    type="button"
+                    className="bg-signup-blue disabled:cursor-default disabled:bg-opacity-50 text-sm mx-auto text-white px-3 py-2.5 rounded-md font-semibold mt-10"
+                    style={{ lineHeight: '1.375rem' }}
+                  >
+                    Don&apos;t see it? Resend
+                  </button>
+                  <p className="text-base text-center mt-2">
+                    Not your account ?{' '}
+                    <span className="font-semibold cursor-pointer text-signup-blue">
+                      Log Out
+                    </span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[60vh] overflow-y-auto pt-12">
-          <div className="max-w-xl">
-            <div
-              className={classNames(
-                'flex flex-col items-center justify-center'
-              )}
-            >
-              <h5 className="text-xl font-bold text-center">
-                We Need to Verify your Email
-              </h5>
-              <p className="mt-4 text-base text-center">
-                We sent an OTP to the Email address you provided when you
-                created your account. Verify your email to continue
-              </p>
-              <div className="w-full">
-                <Input type="text" label="Email" value={email} disabled />
-
-                <Input
-                  handleChange={(e) => setOtpData(e.target.value)}
-                  label="OTP"
-                  name="otpData"
-                  id="otp"
-                  placeholder="Enter OTP"
-                  type="number"
-                />
-
-                <InputMessage
-                  message={otpLoad}
-                  loading={otpLoad === 'Validating OTP'}
-                />
-
-                {otpError && <InputError error={otpError} />}
-              </div>
-              <hr
-                className="w-full my-4"
-                style={{ backgroundColor: '#dfe3eb' }}
-              />
-              <p className="mt-4 text-base text-center ">
-                Click on the link in the email to verify your account. You may
-                need to check your <strong>spam</strong> folder.
-              </p>
-              <button
-                type="button"
-                className="bg-signup-blue disabled:cursor-default disabled:bg-opacity-50 text-sm mx-auto text-white px-3 py-2.5 rounded-md font-bold mt-10"
-                style={{ lineHeight: '1.375rem' }}
-              >
-                Don&apos;t see it? Resend
-              </button>
-              <p className="text-base text-center mt-2">
-                Not your account ?{' '}
-                <span className="font-semibold cursor-pointer text-signup-blue">
-                  Log Out
-                </span>
-              </p>
             </div>
           </div>
         </div>

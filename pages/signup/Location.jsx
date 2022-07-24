@@ -308,10 +308,10 @@ const Location = () => {
                     </div>
                   </div>
                 )}
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center">
                   <button
                     type="button"
-                    className="p-3 text-sm text-white bg-blue-500 rounded-md"
+                    className="p-3 text-sm text-white bg-blue-500 rounded-md w-40"
                     onClick={handleUpdateLocation}
                   >
                     Update Location
@@ -320,7 +320,7 @@ const Location = () => {
                     <button
                       type="button"
                       className={classNames(
-                        'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed mt-3'
+                        'p-3 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed mt-3 w-40'
                       )}
                       // disabled={!validated}
                     >

@@ -151,133 +151,70 @@ const Skills = () => {
         </div>
       </div>
 
-      <div className="w-2/3 self-center px-4 py-6 overflow-y-auto md:px-20">
-        <div className="">
+      <div className="w-2/3 overflow-y-auto md:px-20 flex flex-col">
+        <div className="my-auto overflow-y-auto">
           <div className="w-full max-w-xl pt-8" style={{ color: '#141820' }}>
-            <div
-              className={classNames('mt-10 flex items-center justify-between')}
-            >
-              <button type="button" onClick={() => router.back()}>
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
-                  height={30}
-                  width={30}
-                  alt="back"
-                  className="cursor-pointer"
-                />
-              </button>
-
-              <div className="flex">
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-blue-500'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-              </div>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed hidden'
-                )}
-              >
-                Next
-              </button>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-signup-blue text-white rounded-md text-sm font-medium '
-                )}
-                onClick={handleSubmit}
-              >
-                Register
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full max-w-xl pt-12 h-[60vh] overflow-y-auto">
-          <div className="">
-            <p className="mb-2 font-semibold text-md">
-              Rank your skills from the list below.
-            </p>
-            <div className="relative">
-              <input
-                type="text"
-                className="w-full px-4 py-2 my-2 text-sm text-gray-600 border border-gray-300 rounded-md outline-none"
-                placeholder="Example: Java, C++"
-                value={inputValue}
-                onChange={handleInputValueChange}
-              />
-              <div
-                className={`${
-                  autocomplete.disabled ? 'hidden' : ''
-                } max-h-64 overflow-y-scroll absolute z-10 border rounded-md border-gray-300 py-1 bg-white ml-1`}
-                style={{ width: 'calc(100% + 20px)' }}
-              >
-                {autocomplete.data.map((item, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className="flex items-center w-full h-8 px-3 mt-1 text-sm font-medium cursor-pointer hover:bg-gray-100"
-                    onClick={() => updateItems(item)}
+            <div className="w-full max-w-xl pt-12 h-full overflow-y-auto">
+              <div className="">
+                <p className="mb-2 font-semibold text-md">
+                  Rank your skills from the list below.
+                </p>
+                <div className="relative">
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 my-2 text-sm text-gray-600 border border-gray-300 rounded-md outline-none"
+                    placeholder="Example: Java, C++"
+                    value={inputValue}
+                    onChange={handleInputValueChange}
+                  />
+                  <div
+                    className={`${
+                      autocomplete.disabled ? 'hidden' : ''
+                    } max-h-64 overflow-y-scroll absolute z-10 border rounded-md border-gray-300 py-1 bg-white ml-1`}
+                    style={{ width: 'calc(100% + 20px)' }}
                   >
-                    {item}
-                  </button>
-                ))}
-              </div>
-              <div className="mt-1">
-                {dataSet.map((item, index) => {
-                  const i = skills.findIndex((x) => x === item.name);
-                  return (
+                    {autocomplete.data.map((item, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        className="flex items-center w-full h-8 px-3 mt-1 text-sm font-medium cursor-pointer hover:bg-gray-100"
+                        onClick={() => updateItems(item)}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-1">
+                    {dataSet.map((item, index) => {
+                      const i = skills.findIndex((x) => x === item.name);
+                      return (
+                        <button
+                          type="button"
+                          key={index}
+                          className="inline-block px-4 py-3 mb-3 mr-2 text-sm text-gray-500 border border-gray-300 rounded-full cursor-pointer select-none"
+                          style={{
+                            background: i >= 0 ? '#61a0ff' : '',
+                            color: i >= 0 ? '#fff' : '',
+                          }}
+                          onClick={() => updateItems(item.name)}
+                        >
+                          {item.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="flex justify-center">
                     <button
                       type="button"
-                      key={index}
-                      className="inline-block px-4 py-3 mb-3 mr-2 text-sm text-gray-500 border border-gray-300 rounded-full cursor-pointer select-none"
-                      style={{
-                        background: i >= 0 ? '#61a0ff' : '',
-                        color: i >= 0 ? '#fff' : '',
-                      }}
-                      onClick={() => updateItems(item.name)}
+                      className={classNames(
+                        'p-3 mt-3 bg-black text-white rounded-md text-sm font-medium w-40'
+                      )}
+                      onClick={handleSubmit}
                     >
-                      {item.name}
+                      Register
                     </button>
-                  );
-                })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
