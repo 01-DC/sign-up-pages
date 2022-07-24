@@ -2,7 +2,7 @@ import React from 'react';
 import ReferralButton from '../components/ReferralButton';
 
 const ReferralPage = () => (
-  <div className="flex w-screen h-screen overflow-y-hidden bg-white">
+  <div className="flex w-screen h-screen overflow-y-hidden bg-white font-Inter">
     <div
       className="w-1/3 justify-center !bg-bottom !bg-contain !bg-no-repeat"
       style={{
@@ -14,17 +14,17 @@ const ReferralPage = () => (
       <div className="flex flex-col items-center max-w-xl m-4">
         <div>
           <div className="space-y-8 justify-start font-inter">
-            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden">
+            <div className="leading-[1.3rem] overflow-hidden">
               Hey, MetaDev is an exclusive invitation only web3 professional
               networking platform built for Developers.
             </div>
-            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] overflow-hidden">
+            <div className="leading-[1.3rem] overflow-hidden">
               We&apos;re still opening up but anyone can join with an invite
               from an existing user! To join, an existing user has to send an
               invite and also give you access to join MetaDev. Sign up to see if
               you have collaborators on MetaDev who can let you in.
             </div>
-            <div className="leading-[1.3rem] text-[14px] tracking-[-0.015em] ">
+            <div className="leading-[1.3rem]">
               We can&apos;t wait for you to join!
             </div>
           </div>

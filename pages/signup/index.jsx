@@ -61,9 +61,9 @@ const SignUp = () => {
           </p>
         </div>
       </div>
-      <div className="w-2/3 self-center overflow-y-auto md:px-20">
+      <div className="w-2/3 overflow-y-auto md:px-20 flex">
         {/*  */}
-        <div className="h-[60vh] overflow-y-auto">
+        <div className="my-auto w-full overflow-y-auto">
           <div className="w-full max-w-xl" style={{ color: '#141820' }}>
             <div className={classNames('items-center hidden')}>
               <button type="button">
