@@ -65,68 +65,6 @@ const SignUp = () => {
         {/*  */}
         <div className="my-auto w-full overflow-y-auto">
           <div className="w-full max-w-xl" style={{ color: '#141820' }}>
-            <div className={classNames('items-center hidden')}>
-              <button type="button">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/back-arrow-1767523-1502427.png"
-                  height={30}
-                  width={30}
-                  alt="back"
-                  className="cursor-pointer"
-                />
-              </button>
-              <div className="flex">
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-                <div
-                  className={classNames(
-                    'h-1 w-6 rounded-md mr-1.5 cursor-pointer bg-gray-200'
-                  )}
-                />
-              </div>
-              <button
-                type="button"
-                className={classNames(
-                  'py-2 px-8 bg-black text-white rounded-md text-sm font-medium disabled:bg-gray-600 disabled:cursor-not-allowed'
-                )}
-              >
-                Next
-              </button>
-            </div>
-
             <form className={classNames('block w-full')}>
               <button
                 type="button"
@@ -235,7 +173,7 @@ const SignUp = () => {
                 <button
                   type="button"
                   className={classNames(
-                    'bg-signup-blue disabled:cursor-not-allowed disabled:bg-opacity-50 mt-6 w-36 text-sm mx-auto mb-12 block text-white px-3 py-2.5 rounded-md transition-all duration-200 ease-in font-bold'
+                    'bg-black disabled:cursor-not-allowed disabled:bg-opacity-50 mt-6 w-40 text-sm mx-auto mb-12 block text-white p-3 rounded-md transition-all duration-200 ease-in font-bold'
                   )}
                   style={{ lineHeight: '1.375rem' }}
                 >

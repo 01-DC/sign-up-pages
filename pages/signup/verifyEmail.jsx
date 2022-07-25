@@ -202,7 +202,7 @@ const Interests = () => {
                   </p>
                   <button
                     type="button"
-                    className="bg-signup-blue disabled:cursor-default disabled:bg-opacity-50 text-sm mx-auto text-white px-3 py-2.5 rounded-md font-semibold mt-10"
+                    className="bg-black disabled:cursor-default disabled:bg-opacity-50 text-sm mx-auto text-white p-3 rounded-md font-semibold mt-10"
                     style={{ lineHeight: '1.375rem' }}
                   >
                     Don&apos;t see it? Resend
